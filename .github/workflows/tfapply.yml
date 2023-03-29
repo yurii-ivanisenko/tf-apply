@@ -3,10 +3,10 @@ name: TFAPPLY
 on:
   push:
     branches: [ "main" ]
-    paths: ["terraform/aws/INT/us-east-1"]
+    paths: ["terraform/aws/INT/us-east-1/**"]
   pull_request:
     branches: [ "main" ]
-    paths: ["terraform/aws/INT/us-east-1"]
+    paths: ["terraform/aws/INT/us-east-1/**"]
 
 jobs:
   tf_apply:
