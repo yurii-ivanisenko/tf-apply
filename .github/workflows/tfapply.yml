@@ -14,7 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source
-        uses: actions/checkout@v3
+#        uses: actions/checkout@v3
+        uses: snow-actions/sparse-checkout@v1.2.0
+        with:
+          path: 'terraform/aws/INT/us-east-1'
       - name: list folder
         run: ls -al
 
