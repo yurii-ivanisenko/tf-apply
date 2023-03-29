@@ -20,4 +20,9 @@ jobs:
           patterns: set --cone terraform/aws/INT/us-east-1
       - name: list folder
         run: ls -al terraform/aws/INT/us-east-1
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.4.2
+      - run: terraform version
 
