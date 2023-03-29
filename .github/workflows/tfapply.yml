@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source
-#        uses: actions/checkout@v3
         uses: snow-actions/sparse-checkout@v1.2.0
         with:
           patterns: set --cone terraform/aws/INT/us-east-1
@@ -25,4 +24,7 @@ jobs:
         with:
           terraform_version: 1.4.2
       - run: terraform version
+      - name: Check AWS version
+        run: aws --version
+
 
