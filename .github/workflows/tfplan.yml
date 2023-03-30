@@ -1,13 +1,13 @@
-name: TFAPPLY
+name: TFPLAN
 
 on:
-  push:
+  pull_request:
     branches: [ "main" ]
     paths: ["terraform/aws/INT/us-east-1/**"]
 
 jobs:
-  tf_apply:
-    name: TF-apply
+  tf_plan:
+    name: TF-plan
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -30,9 +30,13 @@ jobs:
           aws-region: eu-central-1
 #      - name: Test AWS
 #        run: aws s3 ls
-      - name: terraform apply
-        uses: dflook/terraform-apply@v1
+      - name: terraform plan
+        uses: dflook/terraform-plan@v1
         with:
           path: terraform/aws/INT/us-east-1
+#      - name: terraform apply
+#        uses: dflook/terraform-apply@v1
+#        with:
+#          path: terraform/aws/INT/us-east-1
 
 
