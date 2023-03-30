@@ -17,7 +17,7 @@ jobs:
         with:
           patterns: set --cone terraform/aws/INT/us-east-1
       - name: List folder content
-        run: ls -al terraform/aws/INT/us-east-1
+        run: ls -al terraform/aws/modules
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
         with:
